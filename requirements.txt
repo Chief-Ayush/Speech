@@ -1,0 +1,19 @@
+# Python 3.10-3.12.  PyTorch with CUDA (Kaggle image already provides it); everything else:
+torch>=2.1
+numpy
+scipy
+librosa>=0.10
+soundfile
+pyworld
+setuptools<81        # pyworld imports pkg_resources
+pyyaml
+matplotlib
+tqdm
+g2p_en               # English OOV pronunciation (+ nltk data: averaged_perceptron_tagger_eng, cmudict)
+nltk
+num2words
+aksharamukha         # Telugu -> ISO 15919 romanisation
+datasets             # only for scripts/prepare_data.py (Svarah / IndicTTS download)
+# Forced aligner (conda, not pip):  conda install -c conda-forge montreal-forced-aligner=3.4.3
+pandas              # scripts/plot_losses.py
+transformers        # optional: scripts/evaluate_asr.py, scripts/transcribe_tests.py (Whisper)

@@ -1,0 +1,12 @@
+{
+ "report": {
+  "utterances_ok": 3883,
+  "dropped": {},
+  "train_clips": 3183,
+  "val_clips": 700,
+  "train_hours_after_trim": 4.706,
+  "val_hours_after_trim": 0.962,
+  "speakers": 114
+ },
+ "dropped_ids": {}
+}

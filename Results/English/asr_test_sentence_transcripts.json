@@ -1,0 +1,19 @@
+{
+ "asr": "openai/whisper-small",
+ "Speech/Results_final_ckpt/English/test_generated_audios": {
+  "E1.wav": " The entire distrust of this materialism movement in considerable momentum during the parliamentary proceedings.",
+  "E2a.wav": " The orchestra's conduct during the ceremony was praised by the audience.",
+  "E2b.wav": " Researchers will conduct an experiment to evaluate the proposed method.",
+  "E3.wav": " The rhythm of the orchestra changed unexpectedly.",
+  "E3_corrected_extra.wav": " The rhythm of the orchestra changed unexpectedly.",
+  "E4.wav": " The meeting will start at 10.45 am on 12 November 2026, so on the rush to drive on time."
+ },
+ "Speech/Results/English/test_generated_audios": {
+  "E1.wav": " The entire disestablishment area is on movement and considerable momentum during the parliamentary proceedings.",
+  "E2a.wav": " The orchestra's conduct during the ceremony was praised by the audience.",
+  "E2b.wav": " Researchers will conduct an experiment to evaluate the proposed method.",
+  "E3.wav": " The item of the orcas to change unexpectedly.",
+  "E3_corrected_extra.wav": " The rhythm of the orchestra changed unexpectedly.",
+  "E4.wav": " The meeting will start at 10.45 am on 12th November 2026. So, under us to drive on time."
+ }
+}

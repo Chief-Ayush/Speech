@@ -1,0 +1,54 @@
+# Telugu FastSpeech 2 -- paths are relative to the directory the scripts are run from
+path:
+  manifest: "prep/telugu_manifest.csv"           # created by data_prep (id, speaker, split, text, ...)
+  raw_path: "raw_data/Telugu"                    # <speaker>/<id>.wav + .lab  (22.05 kHz mono)
+  preprocessed_path: "preprocessed_data/Telugu"  # TextGrid/ (aligner output), mel/ pitch/ energy/ duration/, train.txt, val.txt
+  ckpt_path: "output/ckpt/Telugu"
+  log_path: "output/log/Telugu"
+
+preprocess:
+  sampling_rate: 22050
+  filter_length: 1024
+  hop_length: 256
+  win_length: 1024
+  n_mels: 80
+  mel_fmin: 0
+  mel_fmax: 8000          # HiFi-GAN universal vocoder
+  f0_floor: 50
+  f0_ceil: 800
+  pitch: phoneme_level     # F0 (pyworld DIO + StoneMask), interpolated over unvoiced frames, averaged per phoneme, z-normalised
+  energy: phoneme_level    # L2 norm of the STFT magnitude, averaged per phoneme, z-normalised
+
+model:
+  encoder_layer: 4
+  encoder_head: 2
+  encoder_hidden: 256
+  decoder_layer: 6
+  decoder_head: 2
+  decoder_hidden: 256
+  conv_filter_size: 1024
+  conv_kernel_size: [9, 1]
+  encoder_dropout: 0.2
+  decoder_dropout: 0.2
+  variance_predictor: {filter_size: 256, kernel_size: 3, dropout: 0.5}
+  n_bins: 256
+  max_seq_len: 1500       # 15 s clips = 1292 frames
+
+train:
+  seed: 1234
+  batch_size: 32
+  betas: [0.9, 0.98]
+  eps: 1.0e-9
+  weight_decay: 0.0
+  grad_clip_thresh: 1.0
+  warm_up_step: 3000
+  anneal_steps: [35000, 45000]
+  anneal_rate: 0.3
+  total_step: 50000
+  log_step: 100
+  val_step: 1000
+  save_step: 2000
+  amp: true               # fp16 autocast on the T4 GPU
+
+inference:
+  speaker: auto           # most frequent training speaker (English); single voice for Telugu

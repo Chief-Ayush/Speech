@@ -1,0 +1,48 @@
+{
+ "n": 80,
+ "asr": "openai/whisper-small",
+ "real_recordings": {
+  "CER": 3.15,
+  "WER": 6.25
+ },
+ "model_best_fp16.pt": {
+  "step": 9000,
+  "failed": 0,
+  "CER": 6.45,
+  "WER": 11.98,
+  "examples": [
+   [
+    "in the constituent assembly regarding what should be the national language of India",
+    " in the constituent assembly regarding what should be the national language of India."
+   ],
+   [
+    "Messy woven outfits are made in a short amount of time and it cost efficient whereas",
+    " Mesa women outfits are made in a short amount of time and it cost efficient whereas"
+   ],
+   [
+    "see this track as my professionalism but I used to manage some time in writing as my",
+    " see this track as my professionalism but I always do manage some time in writing as much."
+   ]
+  ]
+ },
+ "model_final_fp16.pt": {
+  "step": 50000,
+  "failed": 0,
+  "CER": 5.68,
+  "WER": 11.67,
+  "examples": [
+   [
+    "in the constituent assembly regarding what should be the national language of India",
+    " in the Constituent Assembly regarding what should be the national language of India."
+   ],
+   [
+    "Messy woven outfits are made in a short amount of time and it cost efficient whereas",
+    " messy woven outfits are made in a short amount of time and it cost efficient wears."
+   ],
+   [
+    "see this track as my professionalism but I used to manage some time in writing as my",
+    " See this track as my professionalism but I used to manage sometime in writing as my"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+raw_data/
+preprocessed_data/
+prep/
+output/
+fs2/vocoder/generator_*.pth.tar
+fs2/vocoder/generator_*.pth.tar.zip
+backup/
